@@ -536,6 +536,10 @@ const applyOptimizationDefaults = (
 		if (production) return "deterministic";
 		return "named";
 	});
+	F(optimization, "chunkIds", () => {
+		if (production) return "deterministic";
+		return "named";
+	});
 	F(optimization, "sideEffects", () => (production ? true : "flag"));
 	D(optimization, "runtimeChunk", false);
 	// TODO: change to true in production once realContentHash is stable

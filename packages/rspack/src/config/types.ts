@@ -568,6 +568,7 @@ export interface StatsOptions {
 ///// Optimization /////
 export interface Optimization {
 	moduleIds?: "named" | "deterministic";
+	chunkIds?: "named" | "deterministic";
 	minimize?: boolean;
 	minimizer?: ("..." | RspackPluginInstance)[];
 	splitChunks?: OptimizationSplitChunksOptions | false;

@@ -54,6 +54,10 @@ fn default_optimization_module_ids() -> String {
   "named".to_string()
 }
 
+fn default_optimization_chunk_ids() -> String {
+  "named".to_string()
+}
+
 fn default_optimization_side_effects() -> String {
   "false".to_string()
 }
@@ -103,6 +107,8 @@ pub struct Optimization {
   pub remove_available_modules: bool,
   #[serde(default = "default_optimization_module_ids")]
   pub module_ids: String,
+  #[serde(default = "default_optimization_chunk_ids")]
+  pub chunk_ids: String,
   #[serde(default = "default_optimization_side_effects")]
   pub side_effects: String,
 }
@@ -530,6 +536,11 @@ impl TestConfig {
       plugins.push(rspack_ids::NamedModuleIdsPlugin::default().boxed());
     } else {
       plugins.push(rspack_ids::DeterministicModuleIdsPlugin::default().boxed());
+    }
+    if self.optimization.chunk_ids == "named" {
+      plugins.push(rspack_ids::StableNamedChunkIdsPlugin::default().boxed());
+    } else {
+      plugins.push(rspack_ids::DeterministicChunkIdsPlugin::default().boxed());
     }
     plugins.push(rspack_ids::StableNamedChunkIdsPlugin::new(None, None).boxed());
     // Notice the plugin need to be placed after SplitChunksPlugin

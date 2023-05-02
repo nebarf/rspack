@@ -122,7 +122,9 @@ describe("snapshots", () => {
 		-   "mode": "none",
 		+   "mode": undefined,
 		@@ ... @@
+		-     "chunkIds": "named",
 		-     "minimize": false,
+		+     "chunkIds": "deterministic",
 		+     "minimize": true,
 		@@ ... @@
 		-     "moduleIds": "named",
@@ -171,7 +173,9 @@ describe("snapshots", () => {
 		-   "mode": "none",
 		+   "mode": "production",
 		@@ ... @@
+		-     "chunkIds": "named",
 		-     "minimize": false,
+		+     "chunkIds": "deterministic",
 		+     "minimize": true,
 		@@ ... @@
 		-     "moduleIds": "named",

@@ -179,6 +179,19 @@ impl ChunkGraph {
     modules
   }
 
+  pub fn get_chunk_modules_iterable<'module, 'me: 'module>(
+    &'me self,
+    chunk: &ChunkUkey,
+    module_graph: &'module ModuleGraph,
+  ) -> impl Iterator<Item = &'module dyn Module> + 'module {
+    let chunk_graph_chunk = self.get_chunk_graph_chunk(chunk);
+    chunk_graph_chunk
+      .modules
+      .iter()
+      .filter_map(|uri| module_graph.module_by_identifier(uri))
+      .map(|m| m.as_ref())
+  }
+
   pub fn get_chunk_modules_iterable_by_source_type<'module, 'me: 'module>(
     &'me self,
     chunk: &ChunkUkey,

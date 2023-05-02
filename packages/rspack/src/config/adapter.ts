@@ -456,16 +456,18 @@ function getRawOptimization(
 ): RawOptions["optimization"] {
 	assert(
 		!isNil(optimization.moduleIds) &&
+			!isNil(optimization.chunkIds) &&
 			!isNil(optimization.removeAvailableModules) &&
 			!isNil(optimization.sideEffects) &&
 			!isNil(optimization.realContentHash),
-		"optimization.moduleIds, optimization.removeAvailableModules, optimization.sideEffects, optimization.realContentHash should not be nil after defaults"
+		"optimization.moduleIds, optimization.chunkIds, optimization.removeAvailableModules, optimization.sideEffects, optimization.realContentHash should not be nil after defaults"
 	);
 	return {
 		splitChunks: optimization.splitChunks
 			? getRawSplitChunksOptions(optimization.splitChunks)
 			: undefined,
 		moduleIds: optimization.moduleIds,
+		chunkIds: optimization.chunkIds,
 		removeAvailableModules: optimization.removeAvailableModules,
 		sideEffects: String(optimization.sideEffects),
 		realContentHash: optimization.realContentHash

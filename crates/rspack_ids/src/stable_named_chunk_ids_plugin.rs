@@ -5,7 +5,7 @@ use crate::id_helpers::{
   assign_ascending_chunk_ids, get_short_module_name, request_to_id, shorten_long_string,
 };
 
-#[derive(Debug)]
+#[derive(Debug, Default)]
 pub struct StableNamedChunkIdsPlugin {
   pub delimiter: String,
   pub context: Option<String>,

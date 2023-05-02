@@ -26,7 +26,7 @@ describe("Stats", () => {
 		        "main",
 		      ],
 		      "chunks": [
-		        "main",
+		        "179",
 		      ],
 		      "emitted": true,
 		      "info": {
@@ -50,13 +50,13 @@ describe("Stats", () => {
 		      "files": [
 		        "main.js",
 		      ],
-		      "id": "main",
+		      "id": "179",
 		      "initial": true,
 		      "modules": [
 		        {
 		          "assets": [],
 		          "chunks": [
-		            "main",
+		            "179",
 		          ],
 		          "id": "876",
 		          "identifier": "<PROJECT_ROOT>/tests/fixtures/a.js",
@@ -92,7 +92,7 @@ describe("Stats", () => {
 		      ],
 		      "assetsSize": 215,
 		      "chunks": [
-		        "main",
+		        "179",
 		      ],
 		      "name": "main",
 		    },
@@ -104,7 +104,7 @@ describe("Stats", () => {
 		    {
 		      "assets": [],
 		      "chunks": [
-		        "main",
+		        "179",
 		      ],
 		      "id": "876",
 		      "identifier": "<PROJECT_ROOT>/tests/fixtures/a.js",
@@ -131,7 +131,7 @@ describe("Stats", () => {
 		      ],
 		      "assetsSize": 215,
 		      "chunks": [
-		        "main",
+		        "179",
 		      ],
 		      "name": "main",
 		    },
@@ -146,12 +146,12 @@ describe("Stats", () => {
 		"Hash: a8535b55b7de03c8
 		PublicPath: auto
 		  Asset       Size  Chunks             Chunk Names
-		main.js  215 bytes    main  [emitted]  main
+		main.js  215 bytes     179  [emitted]  main
 		Entrypoint main = main.js
-		chunk {main} main.js (main) 55 bytes [entry]
-		 [876] ./fixtures/a.js 55 bytes {main}
+		chunk  {179} main.js (main) 55 bytes [entry]
+		 [876] ./fixtures/a.js 55 bytes {179}
 		     entry ./fixtures/a 
-		[876] ./fixtures/a.js 55 bytes {main}
+		[876] ./fixtures/a.js 55 bytes {179}
 		    entry ./fixtures/a "
 	`);
 	});
@@ -177,12 +177,12 @@ describe("Stats", () => {
 		"Hash: 54a4e1c6f704eccd
 		PublicPath: auto
 		  Asset       Size  Chunks             Chunk Names
-		main.js  419 bytes    main  [emitted]  main
+		main.js  419 bytes     179  [emitted]  main
 		Entrypoint main = main.js
-		[876] ./fixtures/a.js 55 bytes {main}
-		[211] ./fixtures/b.js 94 bytes {main}
-		[537] ./fixtures/c.js 72 bytes {main}
-		[222] ./fixtures/abc.js 83 bytes {main}
+		[876] ./fixtures/a.js 55 bytes {179}
+		[211] ./fixtures/b.js 94 bytes {179}
+		[537] ./fixtures/c.js 72 bytes {179}
+		[222] ./fixtures/abc.js 83 bytes {179}
 
 		error[javascript]: JavaScript parsing error
 		  ┌─ tests/fixtures/b.js:6:1
