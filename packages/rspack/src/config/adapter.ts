@@ -458,9 +458,10 @@ function getRawOptimization(
 		!isNil(optimization.moduleIds) &&
 			!isNil(optimization.chunkIds) &&
 			!isNil(optimization.removeAvailableModules) &&
+			!isNil(optimization.removeEmptyChunks) &&
 			!isNil(optimization.sideEffects) &&
 			!isNil(optimization.realContentHash),
-		"optimization.moduleIds, optimization.chunkIds, optimization.removeAvailableModules, optimization.sideEffects, optimization.realContentHash should not be nil after defaults"
+		"optimization.moduleIds, optimization.chunkIds, optimization.removeAvailableModules, optimization.removeEmptyChunks, optimization.sideEffects, optimization.realContentHash should not be nil after defaults"
 	);
 	return {
 		splitChunks: optimization.splitChunks
@@ -469,6 +470,7 @@ function getRawOptimization(
 		moduleIds: optimization.moduleIds,
 		chunkIds: optimization.chunkIds,
 		removeAvailableModules: optimization.removeAvailableModules,
+		removeEmptyChunks: optimization.removeEmptyChunks,
 		sideEffects: String(optimization.sideEffects),
 		realContentHash: optimization.realContentHash
 	};
